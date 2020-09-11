@@ -1,0 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+*, 
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.header {
+  background-color: brown;
+  height: 100px;
+}
+.box {
+  display: flex;
+  transition: all .3s;
+}
