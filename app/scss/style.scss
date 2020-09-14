@@ -1,17 +1,359 @@
-html {
-  box-sizing: border-box;
-}
-*, 
-*::before,
-*::after {
-  box-sizing: inherit;
+@import 'vars';
+@import 'global';
+@import 'fonts';
+
+.header__top {
+  background-color: #eef1f3;
 }
 
-.header {
-  background-color: brown;
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 100px;
 }
-.box {
+
+.logo__title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 28px;  
+  vertical-align: 50%;
+
+  .logo__text {
+    color: $btn;
+  }
+}
+
+.header__items {
+  margin-left: auto;
+}
+
+.seller__btn {
+  width: 140px;
+  height: 36px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 7px;
+  font-weight: 400;
+  border-radius: 15px;
+  background-color: $btn;
+  color: #f4f7fe;
+  padding: 14px 0px 11px;
+  margin-right: 50px;
+}
+
+.seller__btn:active {
+  box-shadow: inset 1px 1px 10px -1px rgba(0, 0, 0, 0.5);
+}
+
+.link {
+  margin-right: 30px;
+  position: relative;
+}
+
+.notifications::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 22px;
+  background-color: #ff6a6c;
+  border-radius: 50%;
+  top: -15px;
+  right: -17px;
+}
+
+.messages::after {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-color: #62d03b;
+  border-radius: 50%;
+  top: -17px;
+  right: -17px;
+}
+
+.basket::after {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background-color: $btn;
+  border-radius: 50%;
+  top: -14px;
+  right: -17px;
+}
+
+
+.header__cabinet {
+  max-width: 175px;
+  max-height: 55px;
   display: flex;
-  transition: all .3s;
+  justify-content: space-between;
+  align-items: center;
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #7c7979;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 25px;
+  }
+
+  .avatar__name {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    color: $dgrey;
+  }
+
+  .avatar__price {
+    font-size: 15px;
+    font-weight: 400;
+    color: $btn;
+  }
+
+}
+
+.header__menu-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu__list {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15px;
+  color: $dgrey;
+  text-decoration: none;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  text-decoration: none;
+
+  .link__items {
+    margin-right: 25px;
+  }
+}
+
+.search__product {
+  height: 45px;
+  width: 360px;
+  border: 1px solid #c3c5c7;
+  border-radius: 20px;
+  outline: transparent;
+  padding-left: 25px;
+  padding-right: 70px;
+
+  &:focus {
+    border: 2px solid rgba(2, 6, 31, 0.411);
+  }
+
+  &::placeholder {
+    font-size: 15px;
+    color: #898f96;
+  }
+}
+
+.search__form {
+  position: relative;
+
+  .submit__btn {
+    position: absolute;
+    right: 0;
+    height: 45px;
+    width: 70px;
+    border-radius: 20px;
+    background-color: $btn;
+    border: none;
+    outline: transparent;
+    cursor: pointer;
+  }
+
+  .submit__btn:active {
+    box-shadow: inset 1px 1px 10px -1px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.search {
+  background-color: #2044c9;
+  min-height: 725px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+}
+
+.search__inner {
+  color: #ffffff;
+  padding: 185px 0px 235px;
+  text-align: center;
+
+  .inner__title {
+    font-size: 60px;
+    font-weight: 700;
+  }
+
+  &-title {
+    font-size: 60px;
+    font-weight: 400;
+  }
+
+  &-text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 73px;
+  }
+
+}
+
+.search__btn {
+  width: 190px;
+  height: 55px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  margin-right: 30px;
+  padding: 17px 0px;
+  font-size: 16px;
+
+}
+
+.search__btn:hover {
+  color: $btn;
+  background-color: #ffffff;
+}
+
+.search__btn:active {
+  box-shadow: inset 1px 1px 10px -1px rgba(0, 0, 0, 0.5);
+}
+
+.inner__form {
+  background-color: #fff;
+  width: 1140px;
+  height: 140px;
+  box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 40px;
+  z-index: 5;
+  position: absolute;
+  bottom: -70px;
+  display: flex;
+
+  .form__search {
+    width: 805px;
+    height: 55px;
+    outline: transparent;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    padding: 0px 195px 0px 30px;
+
+  }
+
+  .inner__category {
+    position: absolute;
+    width: 196px;
+    height: 54px;
+    border-left: 1px solid #dcdcdc;
+    bottom: 45px;
+    right: 293px;
+    font-size: 16px;
+    padding: 19px 70px 20px 21px;
+    color: #555555;
+
+
+  }
+
+  .inner__btn {
+    width: 223px;
+    height: 55px;
+    background-color: $btn;
+    color: #ffffff;
+    border-radius: 3px;
+    padding-top: 22px;
+    line-height: 16px;
+    margin-left: 30px;
+
+    &:active {
+      box-shadow: inset 1px 1px 10px -1px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.inner__category::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/icons/arrow-down.png);
+  bottom: 22px;
+  right: 22px;
+  width: 13px;
+  height: 7px;
+  z-index: 4;
+  margin-left: 39px;
+  cursor: pointer;
+}
+
+.search__bg-block {
+  width: 1110px;
+  height: 140px;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  bottom: -50px;
+  border-radius: 5px;
+}
+
+.search__bg-box {
+  width: 1080px;
+  height: 140px;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  bottom: -30px;
+  border-radius: 5px;
+}
+
+.advantages {
+  max-height: 710px;
+  text-align: center;
+}
+
+.advantages__inner {
+  margin-top: 190px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.advantages__item {
+  width: 360px;
+  height: 405px;
+  padding: 40px 35px 50px;
+
+  &-title {
+    margin: 40px 0 35px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  &-text {
+    font-size: 16px;
+    color: $mgrey;
+  }
+
+  &:hover {
+    box-shadow: 1px 1px 35px rgba(245, 245, 245, 1);
+    ;
+    cursor: pointer;
+  }
 }
